@@ -1,9 +1,7 @@
 galaxy_info:
   author: Alan Jenkins
   description:
-    This role provides both the code and documentation for
-    `sourcejedi.rpmfusion-free` and `sourcejedi.rpmfusion-nonfree`.
-    It is not to be invoked directly.
+    Remove one of the RPM Fusion repos, on Fedora Linux
 
   license: GPLv3
 

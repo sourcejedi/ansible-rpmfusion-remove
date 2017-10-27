@@ -1,13 +1,3 @@
-- name: Check variable <repo> - "free" or "nonfree"
-  assert:
-    that:
-      - repo is defined
-      - repo == "free" or repo == "nonfree"
-
-- name: Check OS is Fedora
-  assert:
-    that: ansible_distribution == 'Fedora'
-
 # If the repo has already been removed,
 # then attempting to operate on it will fail
 - name: Check for RPM Fusion repo

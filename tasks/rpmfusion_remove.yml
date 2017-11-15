@@ -73,7 +73,7 @@
   check_mode: False
   changed_when: False
   register: list_installed_keys
-  failed_when: list_installed_keys.rc != 0 or list_installed_keys.stderr
+  failed_when: list_installed_keys.rc != 0 or list_installed_keys.stderr != ""
   args:
     warn: no  # not supported by dnf module
 

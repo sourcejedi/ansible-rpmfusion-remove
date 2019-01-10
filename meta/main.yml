@@ -1,4 +1,5 @@
 galaxy_info:
+  role_name: rpmfusion-remove
   author: Alan Jenkins
   description:
     Remove one of the RPM Fusion repos, on Fedora Linux

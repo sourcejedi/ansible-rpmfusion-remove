@@ -1,4 +1,4 @@
-# rpmfusion-remove #
+# rpmfusion_remove #
 
 Remove the [RPM Fusion](https://rpmfusion.org/) "free" or "nonfree" software repository.
 

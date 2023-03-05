@@ -45,8 +45,6 @@
   changed_when: False
   when: repo_file.stat.exists
   register: list_installed  # Note stdout is a table; the first line is a header
-  args:
-    warn: no  # not supported by dnf module
 
 # 2/3 Fake "changed" status for check mode.
 - name: report | Yes, there are RPM Fusion packages to be removed from this system
@@ -63,8 +61,6 @@
 - name: ensure | RPM Fusion packages are removed
   command: dnf -y repo-pkgs rpmfusion-{{ repo }} remove
   when: repo_file.stat.exists and list_installed.stdout_lines[1:]
-  args:
-    warn: no  # not supported by dnf module
 
 
 - name: Remove rpmfusion release RPM
@@ -84,8 +80,6 @@
   changed_when: False
   register: list_installed_keys
   failed_when: list_installed_keys.rc != 0 or list_installed_keys.stderr != ""
-  args:
-    warn: no  # not supported by dnf module
 
 # 2/3) Fake "changed" status for check mode.
 - name: report | Yes, there are RPM Fusion signing keys to be removed
@@ -100,6 +94,4 @@
 - name: ensure | RPM Fusion signing keys are removed
   command: rpm -e --allmatches {{ item }}
   with_items: "{{ list_installed_keys.stdout_lines }}"
-  args:
-    warn: no  # not supported by dnf
 
